@@ -5,4 +5,3 @@ class TodoItem < ApplicationRecord
     !completed_at.blank?
   end
 end
-

@@ -18,7 +18,7 @@ class TodoListsController < ApplicationController
   def create
     @todo_list = TodoList.new(todo_list_params)
     if @todo_list.save
-      redirect_to @todo_list, notice: 'Todo list was successfully created.'
+      redirect_to @todo_list, notice: "Todo list was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,7 +26,7 @@ class TodoListsController < ApplicationController
 
   def update
     if @todo_list.update(todo_list_params)
-      redirect_to @todo_list, notice: 'Todo list was successfully updated.'
+      redirect_to @todo_list, notice: "Todo list was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class TodoListsController < ApplicationController
   def destroy
     @todo_list.destroy
     respond_to do |format|
-      format.html { redirect_to root_url, notice: 'Todo list was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: "Todo list was successfully destroyed." }
       format.json { head :no_content }
     end
   end
